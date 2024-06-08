@@ -18,7 +18,8 @@ app.get("/", (req, res) => {
 app.post("/api/v1/shortUrl", (req, res) => {
   const id = nanoid(8);
   const longUrl = req.body.longUrl;
-  console.log(longUrl);
+  const currentUrl = req.protocol + "://" + req.get("host");
+
   let data = {};
   try {
     if (fs.existsSync("urlData.json"))
@@ -29,7 +30,7 @@ app.post("/api/v1/shortUrl", (req, res) => {
     fs.writeFileSync("urlData.json", JSON.stringify(data));
 
     res.render("short", {
-      shortUrl: `http://localhost:5000/${id}`,
+      shortUrl: `${currentUrl}/${id}`,
       isActive: true,
     });
   } catch (e) {
