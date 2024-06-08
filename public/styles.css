@@ -1,0 +1,55 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: max(30vw, 400px);
+    height: 500px;
+    text-align: center;
+    box-shadow: 0 0 10px violet;
+    border-radius: 15px;
+    padding-top: 50px;
+}
+
+.container form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 15px;
+}
+
+.container form input {
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+
+
+}
+
+.container form button {
+    height: 30px;
+    padding: 0 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.container .hide {
+    display: none;
+}
+
+.container .active {
+    display: block;
+    margin-top: 20px;
+    color: blue;
+}
